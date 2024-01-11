@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\HomeIndex;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
+//Route::view('/', 'welcome');
+Route::get('/', HomeIndex::class)->name('home');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
